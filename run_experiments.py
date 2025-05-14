@@ -108,29 +108,29 @@ def main(config_path):
     save_path = config["output"]["save_model_path"]
     os.makedirs(save_path, exist_ok=True)
 
-    # histories = train_models(
-    #     model_types,
-    #     train_inputs,
-    #     train_targets,
-    #     val_inputs,
-    #     val_targets,
-    #     tokenizer,
-    #     config["training"]["epochs"],
-    #     save_path
-    # )
+    histories = train_models(
+        model_types,
+        train_inputs,
+        train_targets,
+        val_inputs,
+        val_targets,
+        tokenizer,
+        config["training"]["epochs"],
+        save_path
+    )
 
-    # # Validation Accuracy
-    # print("\nValidation Accuracy Comparison:")
-    # for model_type, val_acc in histories.items():
-    #     print(f"{model_type}: {val_acc:.4f}")
+    # Validation Accuracy
+    print("\nValidation Accuracy Comparison:")
+    for model_type, val_acc in histories.items():
+        print(f"{model_type}: {val_acc:.4f}")
 
-    # Evaluate
-    # evaluate_models(model_types, test_inputs, test_targets, save_path)
+    # Evaluate test dataset
+    evaluate_models(model_types, test_inputs, test_targets, save_path)
 
     # Predictions (for the last model trained)
 
     # Split the dataset as the Memory is not enough
-    data_split = 400 # first 400 samples will be predicted
+    data_split = config["prediction"]["data_split"] # first 400 samples will be predicted
 
     test_data = test_data[:data_split]
     inputs = [sample['dialogue'] for sample in test_data]

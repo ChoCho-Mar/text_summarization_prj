@@ -8,10 +8,15 @@ This project implements and compares multiple deep learning models (Simple RNN, 
 ```
 text-summarization/
 ├── data/
-│   ├── train.csv
-│   └── test.csv
+|   ├── load_data.py
+|   ├── dataset.csv
+│   ├── train_dataset.csv
+|   |-- validation_dataset.csv
+│   └── test_dataset.csv
 ├── models/
-│   └── simple_rnn.py
+│   └── attentions_tf.py
+|   └── baseline_tfidf.py
+|   └── seq2seq_tf.py
 ├── training/
 │   └── train_model.py
 ├── utils/
