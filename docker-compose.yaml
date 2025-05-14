@@ -1,0 +1,15 @@
+
+version: "3.8"
+
+services:
+  summarizer:
+    build: .
+    container_name: text_summarization_prj
+    volumes:
+      - .:/workspace
+      - ./data:/workspace/data          # share local data folder
+      - ./saved_models:/workspace/saved_models  # share model output
+      - ./configs/config.yaml:/workspace/configs/config.yaml    # share config
+    ports:
+      - "8888:8888"       # (optional) expose ports if needed
+    # command: ["python", "run_experiments.py", "--config", "configs/config.yaml"]

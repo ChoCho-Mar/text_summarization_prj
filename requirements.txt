@@ -1,0 +1,11 @@
+pandas
+PyYAML
+torch
+torchvision
+tensorflow
+scikit-learn
+nltk
+transformers
+datasets
+rouge-score
+evaluate

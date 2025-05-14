@@ -1,0 +1,25 @@
+
+data:
+  train_path: "data/train_dataset.csv"
+  val_path: "data/validation_dataset.csv"
+  test_path: "data/test_dataset.csv"
+
+model:
+  tokenizer_name: "t5-small"
+  model_types:
+    - "simple_rnn"
+    - "gru"
+    - "lstm"
+    - "basic_attention"
+    - "scaled_attention"
+
+training:
+  max_input_len: 256
+  max_output_len: 64
+  epochs: 10
+
+output:
+  save_model_path: "saved_models/"
+
+prediction:
+  num_samples: 2
