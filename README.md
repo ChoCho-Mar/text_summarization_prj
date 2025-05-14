@@ -26,6 +26,7 @@ text-summarization/
 ├── Dockerfile
 ├── docker-compose.yaml
 ├── requirements.txt
+├── summarize_tfidf.py
 └── run_experiments.py
 
 ```
@@ -149,6 +150,7 @@ After training, models are saved automatically to:
 ``` 
 saved_models/<model_type>_model.h5
 ``` 
+The trained_models are excluded as the file size is large to upload on GitHub.
 
 ## 📊 Results
 
